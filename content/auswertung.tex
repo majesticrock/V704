@@ -1,2 +1,69 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{Absoprtion von Gamma-Strahlung}
+
+Aus GLEICHUNG erfolgt der Zusammenhang
+
+\begin{equation}
+    \label{eqn:plot}
+    f(D) := \ln \bigg (\frac{ N \cdot 1 \symup{s}}{t} - \Delta N \cdot 1 \symup{s} \bigg) = - \mu \cdot D - \ln (N_0 \cdot 1 \symup{s}),
+\end{equation}
+
+wobei
+
+\begin{center}
+    $\Delta N = \frac{829}{900 \symup{s}}$
+\end{center}
+
+die Zählrate pro Sekunde ist, die gemessen wird, wenn weder Absorper noch Quelle in der Messvorrichtung sind.
+
+Zur Bestimmung des Absorptionskoeffizienten von Blei werden nun die Daten aus \autoref{tab:blei} betrachet.
+
+\input{../content/blei.tex}
+
+Diese werden nach der in Gleichung \eqref{eqn:plot} in einem Plot aufgetragen.
+Mittels Python 3.7.0 wird eine lineare Ausgleichsrechnung durchgeführt, die der obigen Formel genügt.
+Die entstehende Gerade wird ebenfalls im Plot eingefügt.
+Dieser ist in \autoref{fig:plot_blei} zu sehen.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{build/plot_blei.pdf}
+    \caption{Plot und Fit der Messwerte mit Blei als Abschirmmaterial zur Bestimmung des Absorptionskoeffizienten.}
+    \label{fig:plot_blei}
+\end{figure}
+
+Die Koeffizienten ergeben sich zu 
+
+\begin{center}
+    $\mu_\text{Blei} = (1.03 \pm 0.02)$ $\frac{1}{\symup{cm}}$
+
+    $\ln ( N_ 0 \cdot 1 \symup{s}) = (5.05 \pm 0.07).$
+\end{center}
+
+Damit ist $N_0 = (156 \pm 10)$ $\frac{1}{\symup{s}}$
+
+Zur Berechnung des Absorptionskoeffizienten von Eisen wird analog vorgegangen.
+
+\input{../content/eisen.tex}
+
+Die Werte in \autoref{tab:eisen} werden in einem Plot gemäß Gleichung \eqref{eqn:plot} aufgetragen und durch diese eine Ausgleichsgerade gelegt.
+Der entstehende Plot ist in \autoref{fig:plot_eisen} zu sehen.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{build/plot_eisen.pdf}
+    \caption{Plot und Fit der Messwerte mit Eisen als Abschirmmaterial zur Bestimmung des Absorptionskoeffizienten.}
+    \label{fig:plot_eisen}
+\end{figure}
+
+Die Koeffizienten berechnen sich mittels Python 3.7.0 als
+
+\begin{center}
+    $\mu_\text{Eisen} = (0.431 \pm 0.005)$ $\frac{1}{\symup{cm}}$
+
+    $\ln ( N_ 0 \cdot 1 \symup{s}) = (5.02  \pm 0.01).$
+\end{center}
+
+Womit hier $N_0 = (151 \pm 2)$ $\frac{1}{\symup{s}}$ ist.
