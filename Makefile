@@ -7,8 +7,11 @@ build/plot_blei.pdf: plot-blei.py matplotlibrc header-matplotlib.tex | build
 build/plot_eisen.pdf: plot-eisen.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python plot-eisen.py
 
+build/plot_beta.pdf: beta.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python beta.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot_blei.pdf build/plot_eisen.pdf
+build/main.pdf: build/plot_blei.pdf build/plot_eisen.pdf build/plot_beta.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \

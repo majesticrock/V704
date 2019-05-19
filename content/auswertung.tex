@@ -37,26 +37,26 @@ Dieser ist in \autoref{fig:plot_blei} zu sehen.
 Die Koeffizienten ergeben sich zu 
 
 \begin{center}
-    $\mu_\text{Blei} = (1.03 \pm 0.02)$ $\frac{1}{\symup{cm}}$
+    $\mu_\text{Blei} = (1,03 \pm 0,02)$ $\frac{1}{\symup{cm}}$
 
-    $\ln ( N_ 0 \cdot 1 \symup{s}) = (5.05 \pm 0.07).$
+    $\ln ( N_ 0 \cdot 1 \symup{s}) = (5,05 \pm 0,07).$
 \end{center}
 
 Damit ist $N_0 = (156 \pm 10)$ $\frac{1}{\symup{s}}$.
 Über GLEICHUNG kann ein Theoriewert für den Absorptionskoeffizienten als
 
 \begin{center}
-    $\mu_\text{Blei, Theorie} = 0.69$ $\frac{1}{\symup{cm}}$
+    $\mu_\text{Blei, Theorie} = 0,69$ $\frac{1}{\symup{cm}}$
 \end{center}
 
 bestimmt werden.
 Dabei ist mittels GLEICHUNG
 
 \begin{center}
-    $\sigma (\epsilon ) = 2.5655 \cdot 10^{-29}$ $\frac{1}{\symup{m}^2}$,
+    $\sigma (\epsilon ) = 2,5655 \cdot 10^{-29}$ $\frac{1}{\symup{m}^2}$,
 \end{center}
 
-wobei $\epsilon = 1.295$ beträgt \cite{V704}.
+wobei $\epsilon = 1,295$ beträgt \cite{V704}.
 
 Zur Berechnung des Absorptionskoeffizienten von Eisen wird analog vorgegangen.
 
@@ -75,9 +75,9 @@ Der entstehende Plot ist in \autoref{fig:plot_eisen} zu sehen.
 Die Koeffizienten berechnen sich mittels Python 3.7.0 als
 
 \begin{center}
-    $\mu_\text{Eisen} = (0.431 \pm 0.005)$ $\frac{1}{\symup{cm}}$
+    $\mu_\text{Eisen} = (0,431 \pm 0,005)$ $\frac{1}{\symup{cm}}$
 
-    $\ln ( N_ 0 \cdot 1 \symup{s}) = (5.02  \pm 0.01).$
+    $\ln ( N_ 0 \cdot 1 \symup{s}) = (5,02  \pm 0,01).$
 \end{center}
 
 Womit hier $N_0 = (151 \pm 2)$ $\frac{1}{\symup{s}}$ ist.
@@ -85,7 +85,62 @@ Womit hier $N_0 = (151 \pm 2)$ $\frac{1}{\symup{s}}$ ist.
 Der Theoriewert wird mit demselben $\sigma$ wie schon bei Blei und ebenfalls mittels GLEICHUNG als
 
 \begin{center}
-    $\mu_\text{Eisen, Theorie} = 0.568$ $\frac{1}{\symup{cm}}$
+    $\mu_\text{Eisen, Theorie} = 0,568$ $\frac{1}{\symup{cm}}$
 \end{center}
 
 bestimmt.
+
+
+
+\subsection{Absoprtion von Beta-Strahlung}
+
+Zur Bestimmung der Maximalenergie werden zunächst die Wert aus \autoref{tab:beta} in einem Plot dargestellt.
+Dabei ergibt sich $R$ aus GLEICHUNG. Dabei wird $\ln(A \cdot 1 \symup{s})$ gegen die Massenbelegung aufgetragen.
+Anschließend wird durch die beiden linearen Teile,
+also zwischen den $R$-Werten von $2,70$ $\frac{\symup{g}}{\symup{cm}^2}$ und $0,683$ $\frac{\symup{g}}{\symup{cm}^2}$, 
+sowie $0,683$ $\frac{\symup{g}}{\symup{cm}^2}$ und $1,301$ $\frac{\symup{g}}{\symup{cm}^2}$ je eine Ausgleichgsgerade der Form
+
+\begin{equation}
+    \ln(A \cdot 1 \symup{s}) = a_i x + b_i
+\end{equation}
+
+gelegt, wobei $a_i$ und $b_i$ die Parameter zu den Geraden 1 und 2 sind.
+
+\input{../content/beta.tex}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{build/plot_beta.pdf}
+    \caption{Plot und Fit der Aktivität gegen die Massenbelegung bei Beta-Strahlung.}
+    \label{fig:plot_beta}
+\end{figure}
+
+Mittels Python 3.7.0 lassen sich diese Koeffizienten als
+
+\begin{align*}
+    a_1 &= (-9 \pm 1) \, \frac{\symup{cm}^2}{\symup{g}}\\
+    b_1 &= 5,5 \pm 0,8
+\end{align*}
+
+und
+
+\begin{align*}
+    a_2 &= (0,1 \pm 0,1) \, \frac{\symup{cm}^2}{\symup{g}}\\
+    b_2 &= -0,5 \pm 0,1
+\end{align*}
+
+bestimmen. Der entsprechende Plot ist in \autoref{fig:plot_beta} zu sehen.
+
+Die maximale Reichweite $R_\text{max}$ ist der Schnittpunkt der beiden Gerade, welcher mittels
+
+\begin{center}
+    $R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0,7 \pm 0,2)$ $\frac{\symup{g}}{\symup{cm}^2}$
+\end{center}
+
+bestimmt werden kann. Mittels GLEICHUNG kann das die Maximalenergie als
+
+\begin{center}
+    $E_\text{max} = (1,4 \pm 0,3)$ MeV
+\end{center}
+
+errechnet werden.

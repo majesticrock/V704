@@ -61,6 +61,6 @@ def csv2textable(pathToFile, caption, label, format, delimiter=";"):
         f.write(fileEnd)
 
 
-csv2textable("csv/blei.csv", "Gesamtzählraten mit Blei als Abschirmmaterial bei verschiedenen Dicken.", "blei", "S[table-format=1.1] S[table-format=3.0] S[table-format=5.0]")
+csv2textable("csv/blei.csv", "Gesamtzählraten mit Blei als Abschirmmaterial bei verschiedenen Dicken.", "blei", "S[table-format=1.1] S[table-format=3.0] S[table-format=5.0] @{${}\pm{}$} S[table-format=3.0]")
 
-csv2textable("csv/eisen.csv", "Gesamtzählraten mit Eisen als Abschirmmaterial bei verschiedenen Dicken.", "eisen", "S[table-format=1.1] S[table-format=3.0] S[table-format=5.0]")
+csv2textable("csv/eisen.csv", "Gesamtzählraten mit Eisen als Abschirmmaterial bei verschiedenen Dicken.", "eisen", "S[table-format=1.1] S[table-format=3.0] S[table-format=5.0] @{${}\pm{}$} S[table-format=3.0]")
