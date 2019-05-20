@@ -95,10 +95,11 @@ bestimmt.
 \subsection{Absoprtion von Beta-Strahlung}
 
 Zur Bestimmung der Maximalenergie werden zunächst die Werte aus \autoref{tab:beta} in einem Plot dargestellt.
-Dabei wird $\ln(A \cdot 1 \symup{s})$ gegen die Massenbelegung $R$ aufgetragen, welche sich aus GLEICHUNG berechnet.
+Dabei wird $\ln((A - A_0) \cdot 1 \symup{s})$ gegen die Massenbelegung $R$ aufgetragen, welche sich aus GLEICHUNG berechnet.
+Dabei beträgt $A_0 = \frac{495}{900 \, \symup{s}}$.
 Anschließend wird durch die beiden linearen Teile,
-also zwischen den $R$-Werten von $2,70$ $\frac{\symup{g}}{\symup{cm}^2}$ und $0,683$ $\frac{\symup{g}}{\symup{cm}^2}$, 
-sowie $0,683$ $\frac{\symup{g}}{\symup{cm}^2}$ und $1,301$ $\frac{\symup{g}}{\symup{cm}^2}$ je eine Ausgleichgsgerade der Form
+also zwischen den $R$-Werten von $0,270$ $\frac{\symup{g}}{\symup{cm}^2}$ und $0,683$ $\frac{\symup{g}}{\symup{cm}^2}$, 
+sowie $0,815$ $\frac{\symup{g}}{\symup{cm}^2}$ und $1,301$ $\frac{\symup{g}}{\symup{cm}^2}$ je eine Ausgleichgsgerade der Form
 
 \begin{equation}
     \ln(A \cdot 1 \symup{s}) = a_i x + b_i
@@ -118,15 +119,15 @@ gelegt, wobei $a_i$ und $b_i$ die Parameter zu den Geraden 1 und 2 sind.
 Mittels Python 3.7.0 lassen sich diese Koeffizienten als
 
 \begin{align*}
-    a_1 &= (-9 \pm 1) \, \frac{\symup{cm}^2}{\symup{g}}\\
-    b_1 &= 5,5 \pm 0,8
+    a_1 &= (-11 \pm 1) \, \frac{\symup{cm}^2}{\symup{g}}\\
+    b_1 &= 6,0 \pm 0,5
 \end{align*}
 
 und
 
 \begin{align*}
-    a_2 &= (0,1 \pm 0,1) \, \frac{\symup{cm}^2}{\symup{g}}\\
-    b_2 &= -0,5 \pm 0,1
+    a_2 &= (-0,6 \pm 0,8) \, \frac{\symup{cm}^2}{\symup{g}}\\
+    b_2 &= -1,5 \pm 0,9
 \end{align*}
 
 bestimmen. Der entsprechende Plot ist in \autoref{fig:plot_beta} zu sehen.
@@ -134,13 +135,13 @@ bestimmen. Der entsprechende Plot ist in \autoref{fig:plot_beta} zu sehen.
 Die maximale Reichweite $R_\text{max}$ ist der Schnittpunkt der beiden Gerade, welcher mittels
 
 \begin{center}
-    $R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0,7 \pm 0,2)$ $\frac{\symup{g}}{\symup{cm}^2}$
+    $R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0,7 \pm 0,1)$ $\frac{\symup{g}}{\symup{cm}^2}$
 \end{center}
 
 bestimmt werden kann. Mittels GLEICHUNG kann daraus die Maximalenergie als
 
 \begin{center}
-    $E_\text{max} = (1,4 \pm 0,3)$ MeV
+    $E_\text{max} = (1,6 \pm 0,3)$ MeV
 \end{center}
 
 errechnet werden.
