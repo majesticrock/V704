@@ -3,7 +3,7 @@
 
 \subsection{Absoprtion von Gamma-Strahlung}
 
-Aus GLEICHUNG erfolgt der Zusammenhang
+Aus Gleichung \eqref{eqn:absorp} erfolgt der Zusammenhang
 
 \begin{equation}
     \label{eqn:plot}
@@ -43,14 +43,14 @@ Die Koeffizienten ergeben sich zu
 \end{center}
 
 Damit ist $N_0 = (156 \pm 10)$ $\frac{1}{\symup{s}}$.
-Über GLEICHUNG kann ein Theoriewert für den Absorptionskoeffizienten als
+Über Gleichung \eqref{eqn:mu} kann ein Theoriewert für den Absorptionskoeffizienten als
 
 \begin{center}
     $\mu_\text{Blei, Theorie} = 0,69$ $\frac{1}{\symup{cm}}$
 \end{center}
 
 bestimmt werden.
-Dabei ist mittels GLEICHUNG
+Dabei ist mittels Gleichung \eqref{eqn:wirkung_comp}
 
 \begin{center}
     $\sigma (\epsilon ) = 2,5655 \cdot 10^{-29}$ $\frac{1}{\symup{m}^2}$,
@@ -82,7 +82,7 @@ Die Koeffizienten berechnen sich mittels Python 3.7.0 als
 
 Womit hier $N_0 = (151 \pm 2)$ $\frac{1}{\symup{s}}$ ist.
 
-Der Theoriewert wird mit demselben $\sigma$ wie schon bei Blei und ebenfalls mittels GLEICHUNG als
+Der Theoriewert wird mit demselben $\sigma$ wie schon bei Blei und ebenfalls mittels Gleichung \eqref{eqn:mu} als
 
 \begin{center}
     $\mu_\text{Eisen, Theorie} = 0,568$ $\frac{1}{\symup{cm}}$
@@ -95,7 +95,7 @@ bestimmt.
 \subsection{Absoprtion von Beta-Strahlung}
 
 Zur Bestimmung der Maximalenergie werden zunächst die Werte aus \autoref{tab:beta} in einem Plot dargestellt.
-Dabei wird $\ln((A - A_0) \cdot 1 \symup{s})$ gegen die Massenbelegung $R$ aufgetragen, welche sich aus GLEICHUNG berechnet.
+Dabei wird $\ln((A - A_0) \cdot 1 \symup{s})$ gegen die Massenbelegung $R$ aufgetragen, welche sich aus Gleichung \eqref{eqn:massenbelegung} berechnet.
 Dabei beträgt $A_0 = \frac{495}{900 \, \symup{s}}$.
 Anschließend wird durch die beiden linearen Teile,
 also zwischen den $R$-Werten von $0,270$ $\frac{\symup{g}}{\symup{cm}^2}$ und $0,683$ $\frac{\symup{g}}{\symup{cm}^2}$, 
@@ -138,7 +138,7 @@ Die maximale Reichweite $R_\text{max}$ ist der Schnittpunkt der beiden Gerade, w
     $R_\text{max} = \frac{b_2 - b_1}{a_1 - a_2} = (0,7 \pm 0,1)$ $\frac{\symup{g}}{\symup{cm}^2}$
 \end{center}
 
-bestimmt werden kann. Mittels GLEICHUNG kann daraus die Maximalenergie als
+bestimmt werden kann. Mittels Gleichung \eqref{eqn:max_energie} kann daraus die Maximalenergie als
 
 \begin{center}
     $E_\text{max} = (1,6 \pm 0,3)$ MeV
