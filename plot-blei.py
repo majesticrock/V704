@@ -28,8 +28,8 @@ for values in werte:
     else:
         xdata[i] = float(values[0])
         ydata[i] = np.log((float(values[2]) ) / float(values[1]) - nullmessung)
-        y_err[i] = np.log(np.sqrt(float(values[2]) / float(values[1]) - nullmessung))
-
+        #y_err[i] = np.sqrt(float(values[2]) / float(values[1]) - nullmessung)
+        y_err[i] = np.sqrt( float(values[2]) - (nullmessung) ) / float(values[1])
         i+=1
 
 
